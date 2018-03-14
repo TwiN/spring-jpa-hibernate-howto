@@ -18,12 +18,12 @@ public class ManyToOneService {
 	private BowlRepository bowlRepository;
 	
 	
-	public Fruit createFruit(Fruit fruit) {
+	public Fruit saveFruit(Fruit fruit) {
 		return fruitRepository.save(fruit);
 	}
 	
 	
-	public Bowl createBowl(Bowl bowl) {
+	public Bowl saveBowl(Bowl bowl) {
 		return bowlRepository.save(bowl);
 	}
 	

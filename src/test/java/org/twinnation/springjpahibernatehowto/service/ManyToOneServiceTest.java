@@ -28,7 +28,7 @@ public class ManyToOneServiceTest {
 	
 	@Test
 	public void createFruit() throws Exception {
-		Fruit fruit = service.createFruit(new Fruit("Orange", null));
+		Fruit fruit = service.saveFruit(new Fruit("Orange", null));
 		assertEquals(fruit, fruitRepository.getOne(fruit.getId()));
 	}
 	
@@ -39,7 +39,7 @@ public class ManyToOneServiceTest {
 		Fruit orange = new Fruit("Orange", bowl);
 		Fruit apple = new Fruit("Apple", bowl);
 		bowl.setFruits(Arrays.asList(orange, apple));
-		bowl = service.createBowl(bowl);
+		bowl = service.saveBowl(bowl);
 		orange = fruitRepository.save(orange);
 		apple = fruitRepository.save(apple);
 		assertEquals(bowl, bowlRepository.getOne(bowl.getId()));
